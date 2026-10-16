@@ -1,0 +1,4 @@
+index,file,frame_id,device_timestamp_ns,device_timestamp_ticks,host_timestamp_ns,pixel_format,incomplete,chunk_NrBounces
+0,frames/000000.tiff,3,,0,1792127777668059000,Mono8,False,0
+1,frames/000001.tiff,4,,0,1792127777698683500,Mono8,False,0
+2,frames/000002.tiff,5,,0,1792127777729761900,Mono8,False,0

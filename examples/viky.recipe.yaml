@@ -1,0 +1,12 @@
+gcr_version: "1.0"
+kind: recipe
+name: viky-free-run
+config: viky.config.yaml
+acquisition:
+  trigger: { mode: free_run }
+  frames: 10
+  frame_rate: 50
+  warmup_frames: 2
+  timeout_ms: 3000
+chunks: [NrBounces]
+output: { format: tiff }

@@ -1,0 +1,119 @@
+{
+  "$defs": {
+    "ApplyRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "title": "Key",
+          "type": "string"
+        },
+        "node": {
+          "description": "Node actually written on the device (after profile resolution).",
+          "title": "Node",
+          "type": "string"
+        },
+        "level": {
+          "enum": [
+            "required",
+            "preferred",
+            "optional"
+          ],
+          "title": "Level",
+          "type": "string"
+        },
+        "requested": {
+          "default": null,
+          "title": "Requested"
+        },
+        "applied": {
+          "default": null,
+          "title": "Applied"
+        },
+        "readback": {
+          "default": null,
+          "title": "Readback"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit"
+        },
+        "status": {
+          "enum": [
+            "ok",
+            "approx",
+            "skipped",
+            "failed"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "message": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Message"
+        }
+      },
+      "required": [
+        "key",
+        "node",
+        "level",
+        "status"
+      ],
+      "title": "ApplyRecord",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "gcr_version": {
+      "default": "1.0",
+      "description": "Format version 'MAJOR.MINOR'.",
+      "title": "Gcr Version",
+      "type": "string"
+    },
+    "kind": {
+      "const": "applied",
+      "default": "applied",
+      "title": "Kind",
+      "type": "string"
+    },
+    "profile": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Profile"
+    },
+    "records": {
+      "items": {
+        "$ref": "#/$defs/ApplyRecord"
+      },
+      "title": "Records",
+      "type": "array"
+    }
+  },
+  "title": "ApplyReport",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/dotchang/genicam-format-prototype/spec/schema/applied.schema.json"
+}

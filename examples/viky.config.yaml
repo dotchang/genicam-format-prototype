@@ -1,0 +1,13 @@
+# Runs on the "Viky" simulator shipped with the `genicam` Python package
+# (site-packages/genicam/viky.cti). Viky has no exposure/gain/trigger nodes, so
+# those are marked optional and are reported as skipped instead of failing.
+gcr_version: "1.0"
+kind: config
+name: viky-demo
+settings:
+  - { node: PixelFormat, value: [Mono12, Mono8] }
+  - { node: Width, value: 640 }
+  - { node: Height, value: 480 }
+  - { node: ExposureAuto, value: "Off", level: optional }
+  - { node: ExposureTime, value: 5, unit: ms, level: optional }
+  - { node: BallSize, value: 30, level: preferred }  # SFNC-style name mapped by profiles/viky.profile.yaml

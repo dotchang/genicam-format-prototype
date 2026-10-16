@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gcr"
+version = "0.1.0"
+description = "GCR (GenICam Capture Recipe): a vendor-neutral format for sharing GenICam camera settings, capture procedures and captured data"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.5",
+    "pyyaml>=6",
+    "numpy>=1.24",
+    "tifffile>=2023.1",
+]
+
+[project.optional-dependencies]
+harvesters = ["harvesters>=1.4"]
+dev = ["pytest>=7", "jsonschema>=4"]
+
+[project.scripts]
+gcr = "gcr.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["sim: integration tests using a GenTL simulator producer (needs harvesters)"]

@@ -1,0 +1,12 @@
+gcr_version: "1.0"
+kind: recipe
+name: dark-frame-series
+description: 100 software-triggered frames with per-frame timestamp/exposure chunks.
+config: low-noise-mono.config.yaml
+acquisition:
+  trigger: { mode: software }
+  frames: 100
+  warmup_frames: 5
+  timeout_ms: 2000
+chunks: [Timestamp, ExposureTime, Gain]
+output: { format: tiff, layout: "frames/{index:06d}" }

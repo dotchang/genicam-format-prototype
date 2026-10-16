@@ -1,0 +1,16 @@
+# Older Basler ace GigE cameras (pre-SFNC 2.0 naming).
+# NOT verified on hardware by this project; the GainRaw scale is model dependent -
+# check your camera's documentation and send a corrected profile.
+gcr_version: "1.0"
+kind: profile
+name: basler-ace-gige-legacy
+match: { vendor: "Basler", model: "acA*-*g*" }
+verified: false
+aliases:
+  ExposureTime: ExposureTimeAbs
+  AcquisitionFrameRate: AcquisitionFrameRateAbs
+  BlackLevel: BlackLevelRaw
+conversions:
+  Gain: { node: GainRaw, scale: 0.0359, offset: 0, unit: dB }
+quirks:
+  - "AcquisitionFrameRateEnable must be true for AcquisitionFrameRateAbs to take effect."

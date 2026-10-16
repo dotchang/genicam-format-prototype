@@ -1,0 +1,26 @@
+{
+  "gentl": {
+    "vendor": "Machine Vision Games Ltd.",
+    "model": "Viky",
+    "serial_number": "0",
+    "id": "VikyTL_DEV_red",
+    "version": "1.0",
+    "tl_type": "Custom"
+  },
+  "nodes": {},
+  "producers": [
+    {
+      "file": "viky.cti",
+      "sha256": "1fd46414fe60dec3bf8eafa09cfb7f8b188af5ecdd720999c47ececf91bee6a2"
+    }
+  ],
+  "host": {
+    "gcr": "0.1.0",
+    "python": "3.13.14",
+    "os": "Windows-11-10.0.26200-SP0",
+    "harvesters": "1.4.3",
+    "genicam": "1.6.0",
+    "numpy": "2.5.4",
+    "tifffile": "2026.10.15"
+  }
+}

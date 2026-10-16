@@ -1,0 +1,10 @@
+gcr_version: "1.0"
+kind: profile
+name: viky-simulator
+match: { vendor: "Machine Vision Games*", model: "Viky" }
+verified: true
+aliases:
+  BallSize: BouncingBallSize   # demonstrates mapping a portable name to a device node
+quirks:
+  - "No ExposureTime/Gain/Trigger features; frames are a bouncing-ball animation."
+  - "Buffers carry no device timestamp (timestamp_ns not available)."

@@ -1,0 +1,414 @@
+{
+  "$defs": {
+    "Acquisition": {
+      "additionalProperties": false,
+      "properties": {
+        "trigger": {
+          "$ref": "#/$defs/Trigger"
+        },
+        "frames": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Frames",
+          "type": "integer"
+        },
+        "frame_rate": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Hz; free_run only.",
+          "title": "Frame Rate"
+        },
+        "warmup_frames": {
+          "default": 0,
+          "description": "Frames grabbed and discarded before recording.",
+          "minimum": 0,
+          "title": "Warmup Frames",
+          "type": "integer"
+        },
+        "timeout_ms": {
+          "default": 3000,
+          "minimum": 1,
+          "title": "Timeout Ms",
+          "type": "integer"
+        }
+      },
+      "title": "Acquisition",
+      "type": "object"
+    },
+    "Config": {
+      "additionalProperties": false,
+      "properties": {
+        "gcr_version": {
+          "default": "1.0",
+          "description": "Format version 'MAJOR.MINOR'.",
+          "title": "Gcr Version",
+          "type": "string"
+        },
+        "kind": {
+          "const": "config",
+          "default": "config",
+          "title": "Kind",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        },
+        "target": {
+          "$ref": "#/$defs/Target"
+        },
+        "settings": {
+          "description": "Applied top to bottom.",
+          "items": {
+            "$ref": "#/$defs/Setting"
+          },
+          "title": "Settings",
+          "type": "array"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "Config",
+      "type": "object"
+    },
+    "Output": {
+      "additionalProperties": false,
+      "properties": {
+        "format": {
+          "default": "tiff",
+          "enum": [
+            "tiff",
+            "npy"
+          ],
+          "title": "Format",
+          "type": "string"
+        },
+        "layout": {
+          "default": "frames/{index:06d}",
+          "description": "Path template without extension.",
+          "title": "Layout",
+          "type": "string"
+        }
+      },
+      "title": "Output",
+      "type": "object"
+    },
+    "Setting": {
+      "additionalProperties": false,
+      "properties": {
+        "node": {
+          "description": "SFNC feature name (or device-specific name).",
+          "title": "Node",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Target value. A list is an ordered list of candidates (first usable wins). '@max', '@min' and '@center' (offsets only) are resolved on the device.",
+          "title": "Value"
+        },
+        "execute": {
+          "default": false,
+          "description": "Execute a command node instead of setting a value.",
+          "title": "Execute",
+          "type": "boolean"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Unit of 'value' (s, ms, us, ns, Hz, kHz, dB, ...).",
+          "title": "Unit"
+        },
+        "selector": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "integer"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "description": "Selectors set (in order) before this node, e.g. {GainSelector: All}.",
+          "title": "Selector",
+          "type": "object"
+        },
+        "level": {
+          "default": "required",
+          "description": "What to do when the value cannot be reproduced.",
+          "enum": [
+            "required",
+            "preferred",
+            "optional"
+          ],
+          "title": "Level",
+          "type": "string"
+        },
+        "tolerance": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Accepted readback deviation: absolute number or relative string like '1%'.",
+          "title": "Tolerance"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "required": [
+        "node"
+      ],
+      "title": "Setting",
+      "type": "object"
+    },
+    "Target": {
+      "additionalProperties": false,
+      "description": "Requirements on the camera, written instead of a concrete model name.",
+      "properties": {
+        "pixel_format_family": {
+          "default": "any",
+          "enum": [
+            "mono",
+            "color",
+            "bayer",
+            "any"
+          ],
+          "title": "Pixel Format Family",
+          "type": "string"
+        },
+        "min_bit_depth": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Min Bit Depth"
+        },
+        "min_width": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Min Width"
+        },
+        "min_height": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Min Height"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        }
+      },
+      "title": "Target",
+      "type": "object"
+    },
+    "Trigger": {
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "default": "free_run",
+          "enum": [
+            "free_run",
+            "software",
+            "hardware"
+          ],
+          "title": "Mode",
+          "type": "string"
+        },
+        "source": {
+          "default": "Line1",
+          "description": "TriggerSource for hardware mode.",
+          "title": "Source",
+          "type": "string"
+        },
+        "activation": {
+          "default": "RisingEdge",
+          "description": "TriggerActivation for hardware mode.",
+          "title": "Activation",
+          "type": "string"
+        }
+      },
+      "title": "Trigger",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "gcr_version": {
+      "default": "1.0",
+      "description": "Format version 'MAJOR.MINOR'.",
+      "title": "Gcr Version",
+      "type": "string"
+    },
+    "kind": {
+      "const": "recipe",
+      "default": "recipe",
+      "title": "Kind",
+      "type": "string"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "description": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Description"
+    },
+    "config": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "#/$defs/Config"
+        }
+      ],
+      "description": "Path (relative to this file) or inline config.",
+      "title": "Config"
+    },
+    "acquisition": {
+      "$ref": "#/$defs/Acquisition"
+    },
+    "chunks": {
+      "description": "ChunkSelector names to record per frame.",
+      "items": {
+        "type": "string"
+      },
+      "title": "Chunks",
+      "type": "array"
+    },
+    "output": {
+      "$ref": "#/$defs/Output"
+    }
+  },
+  "required": [
+    "name",
+    "config"
+  ],
+  "title": "Recipe",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/dotchang/genicam-format-prototype/spec/schema/recipe.schema.json"
+}

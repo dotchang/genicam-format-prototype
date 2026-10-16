@@ -1,0 +1,13 @@
+gcr_version: '1.0'
+kind: config
+name: viky-dumped
+target:
+  pixel_format_family: any
+settings:
+- {node: PixelFormat, value: RGBa8, level: required}
+- {node: Width, value: 400, level: required}
+- {node: Height, value: 400, level: required}
+- {node: AcquisitionFrameRate, value: 20.0, unit: Hz, level: required}
+- {node: ChunkModeActive, value: true, level: optional}
+- {node: ChunkEnable, value: true, selector: {ChunkSelector: NrBounces}, level: optional}
+- {node: BallSize, value: 20, level: optional}

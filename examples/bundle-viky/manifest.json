@@ -1,0 +1,110 @@
+{
+  "gcr_version": "1.0",
+  "kind": "bundle",
+  "created_at": "2026-10-16T05:16:17+00:00",
+  "tool": {
+    "name": "gcr",
+    "version": "0.1.0"
+  },
+  "recipe": {
+    "gcr_version": "1.0",
+    "kind": "recipe",
+    "name": "viky-free-run",
+    "config": {
+      "gcr_version": "1.0",
+      "kind": "config",
+      "name": "viky-demo",
+      "target": {
+        "pixel_format_family": "any"
+      },
+      "settings": [
+        {
+          "node": "PixelFormat",
+          "value": [
+            "Mono12",
+            "Mono8"
+          ],
+          "execute": false,
+          "selector": {},
+          "level": "required"
+        },
+        {
+          "node": "Width",
+          "value": 640,
+          "execute": false,
+          "selector": {},
+          "level": "required"
+        },
+        {
+          "node": "Height",
+          "value": 480,
+          "execute": false,
+          "selector": {},
+          "level": "required"
+        },
+        {
+          "node": "ExposureAuto",
+          "value": "Off",
+          "execute": false,
+          "selector": {},
+          "level": "optional"
+        },
+        {
+          "node": "ExposureTime",
+          "value": 5,
+          "execute": false,
+          "unit": "ms",
+          "selector": {},
+          "level": "optional"
+        },
+        {
+          "node": "BallSize",
+          "value": 30,
+          "execute": false,
+          "selector": {},
+          "level": "preferred"
+        }
+      ]
+    },
+    "acquisition": {
+      "trigger": {
+        "mode": "free_run",
+        "source": "Line1",
+        "activation": "RisingEdge"
+      },
+      "frames": 3,
+      "frame_rate": 50.0,
+      "warmup_frames": 2,
+      "timeout_ms": 3000
+    },
+    "chunks": [
+      "NrBounces"
+    ],
+    "output": {
+      "format": "tiff",
+      "layout": "frames/{index:06d}"
+    }
+  },
+  "recipe_sha256": "5e2ada12184946236688d15bd5e5d58b942ee34ff97af1b7f86fa8d17a22cd78",
+  "summary": {
+    "frames_requested": 3,
+    "frames_saved": 3,
+    "frames_incomplete": 0,
+    "missing_frame_ids": [],
+    "apply_ok": true,
+    "apply_counts": {
+      "ok": 8,
+      "skipped": 4
+    }
+  },
+  "files": {
+    "applied.json": "b7d4686bb9b8994076ff2a4dd278536ddcb9db6e5948edf87cccb4e41d1071f3",
+    "device.json": "6eac4a81463f32322f05e71611fb5c219db818135594d8db718030b3588e561a",
+    "frames/000000.tiff": "5935e126f124e020f895940ac7d9d6524ec755c1fc834d3fee7d427ac75e464d",
+    "frames/000001.tiff": "476e8e621065e6286d850ceaa67994d55593a233628d874031bd6f4eb38fe8c8",
+    "frames/000002.tiff": "0dbb974c01bcafcf07f1e1c61df18b5d1e48d63feba7460481035df3e2c39b9d",
+    "frames.csv": "47b1fdecad8cc62b64e72ca16568194952ddf29d0ca6b5f095a8819af15b50b7",
+    "genicam/MachineVisionGames_Viky_Remotedevice_4_0_0_260317172156.xml": "5d4e89311e48c79de24638ac542cd266c1d90a4fe08c3fa0ebc7e192c44cd538",
+    "snapshot.json": "924f79113609210af6822aea4595c9f41b162cfab8e6dd154ba2d62afe0965d0"
+  }
+}

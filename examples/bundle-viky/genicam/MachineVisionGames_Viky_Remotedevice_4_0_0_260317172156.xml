@@ -1,0 +1,1310 @@
+<RegisterDescription xmlns="http://www.genicam.org/GenApi/Version_1_1"
+                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:schemaLocation="http://www.genicam.org/GenApi/Version_1_1 http://www.genicam.org/GenApi/GenApiSchema_Version_1_1.xsd"
+                     ModelName="Viky"
+                     VendorName="MachineVisionGames"
+                     ToolTip="Viky, world first game playing GenTL Producer"
+                     StandardNameSpace="None"
+                     SchemaMajorVersion="1"
+                     SchemaMinorVersion="1"
+                     SchemaSubMinorVersion="0"
+                     MajorVersion="4"
+                     MinorVersion="0"
+                     SubMinorVersion="0"
+                     ProductGuid="460d1697-74bb-41cb-a1ea-16f71263f233"
+                     VersionGuid="ed429fd3-bc6f-4a2e-9f1d-4756acb06f9f">
+   <Category Name="Root" NameSpace="Standard">
+      <Visibility>Beginner</Visibility>
+      <pFeature>TransportLayerControl</pFeature>
+      <pFeature>DeviceControl</pFeature>
+      <pFeature>ImageFormatControl</pFeature>
+      <pFeature>AcquisitionControl</pFeature>
+      <pFeature>ChunkDataControl</pFeature>
+      <pFeature>EventControl</pFeature>
+      <pFeature>FunnyFeaturesControl</pFeature>
+      <pFeature>Scan3dControl</pFeature>
+   </Category>
+   <Category Name="TransportLayerControl" NameSpace="Standard">
+      <ToolTip>Category that contains the transport Layer control features.</ToolTip>
+      <Description>Category that contains the transport Layer control features.</Description>
+      <DisplayName>Transport Layer Control</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pFeature>TLParamsLocked</pFeature>
+      <pFeature>PayloadSize</pFeature>
+      <pFeature>GenDCStreamingMode</pFeature>
+      <pFeature>GenDCStreamingStatus</pFeature>
+      <pFeature>GenDCFlowMappingTable</pFeature>
+      <pFeature>GenDCDescriptor</pFeature>
+   </Category>
+   <Integer Name="TLParamsLocked" NameSpace="Standard">
+      <Visibility>Invisible</Visibility>
+      <Value>0</Value>
+   </Integer>
+   <Port Name="Device" NameSpace="Standard">
+      <ToolTip>The GenICam port through which the Device module is accessed.</ToolTip>
+      <Description>The GenICam port through which the Device module is accessed.</Description>
+      <Visibility>Invisible</Visibility>
+   </Port>
+   <Category Name="DeviceControl" NameSpace="Standard">
+      <ToolTip>Category for device information and control.</ToolTip>
+      <Description>Category for device information and control.</Description>
+      <DisplayName>Device Control</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pFeature>DeviceFeaturePersistenceStart</pFeature>
+      <pFeature>DeviceFeaturePersistenceEnd</pFeature>
+      <pFeature>DeviceRegistersStreamingStart</pFeature>
+      <pFeature>DeviceRegistersStreamingEnd</pFeature>
+   </Category>
+   <Category Name="ImageFormatControl" NameSpace="Standard">
+      <ToolTip>Category for Image Format Control features.</ToolTip>
+      <Description>Category for Image Format Control features.</Description>
+      <DisplayName>Image Format Control</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pFeature>Width</pFeature>
+      <pFeature>Height</pFeature>
+      <pFeature>AspectRatio</pFeature>
+      <pFeature>ComponentSelector</pFeature>
+      <pFeature>ComponentEnable</pFeature>
+      <pFeature>PixelFormat</pFeature>
+      <pFeature>ComponentIDValue</pFeature>
+   </Category>
+   <Category Name="AcquisitionControl" NameSpace="Standard">
+      <ToolTip>Category for the acquisition and trigger control features.</ToolTip>
+      <Description>Category for the acquisition and trigger control features.</Description>
+      <DisplayName>Acquisition Control</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pFeature>AcquisitionMode</pFeature>
+      <pFeature>AcquisitionStart</pFeature>
+      <pFeature>AcquisitionStop</pFeature>
+      <pFeature>AcquisitionFrameRate</pFeature>
+   </Category>
+   <Category Name="ChunkDataControl" NameSpace="Standard">
+      <ToolTip>Category that contains the Chunk Data control features.</ToolTip>
+      <Description>Category that contains the Chunk Data control features.</Description>
+      <DisplayName>Chunk Data Control</DisplayName>
+      <Visibility>Expert</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pFeature>ChunkModeActive</pFeature>
+      <pFeature>ChunkSelector</pFeature>
+      <pFeature>ChunkEnable</pFeature>
+      <pFeature>ChunkNrBounces</pFeature>
+      <pFeature>ChunkComponentSelector</pFeature>
+      <pFeature>ChunkComponentIDValue</pFeature>
+      <pFeature>ChunkScan3dDistanceUnit</pFeature>
+      <pFeature>ChunkScan3dOutputMode</pFeature>
+      <pFeature>ChunkScan3dCoordinateSystem</pFeature>
+      <pFeature>ChunkScan3dCoordinateSystemReference</pFeature>
+      <pFeature>ChunkScan3dCoordinateSelector</pFeature>
+      <pFeature>ChunkScan3dCoordinateScale</pFeature>
+      <pFeature>ChunkScan3dCoordinateOffset</pFeature>
+      <pFeature>ChunkScan3dInvalidDataFlag</pFeature>
+      <pFeature>ChunkScan3dCoordinateReferenceSelector</pFeature>
+      <pFeature>ChunkScan3dCoordinateReferenceValue</pFeature>
+   </Category>
+   <Category Name="EventControl" NameSpace="Standard">
+      <ToolTip>Category that contains Event control features.</ToolTip>
+      <Description>Category that contains Event control features.</Description>
+      <DisplayName>Event Control</DisplayName>
+      <Visibility>Expert</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pFeature>EventSelector</pFeature>
+      <pFeature>EventNotification</pFeature>
+      <pFeature>EventGameProgressData</pFeature>
+   </Category>
+   <Category Name="FunnyFeaturesControl" NameSpace="Custom">
+      <ToolTip>Category that contains the funny features.</ToolTip>
+      <Description>Category that contains the funny features.</Description>
+      <DisplayName>Funny Features Control</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pFeature>BouncingBallSize</pFeature>
+      <pFeature>FancyBallOperation</pFeature>
+   </Category>
+   <Category Name="Scan3dControl" NameSpace="Standard">
+      <ToolTip>Category for control of 3D camera specific features.</ToolTip>
+      <Description>Category for control of 3D camera specific features.</Description>
+      <DisplayName>Scan 3d Control</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pIsAvailable>RangeEnable_Val</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pFeature>Scan3dDistanceUnit</pFeature>
+      <pFeature>Scan3dCoordinateSystem</pFeature>
+      <pFeature>Scan3dOutputMode</pFeature>
+      <pFeature>Scan3dCoordinateSystemReference</pFeature>
+      <pFeature>Scan3dCoordinateSelector</pFeature>
+      <pFeature>Scan3dCoordinateScale</pFeature>
+      <pFeature>Scan3dCoordinateOffset</pFeature>
+      <pFeature>Scan3dInvalidDataFlag</pFeature>
+      <pFeature>Scan3dCoordinateReferenceSelector</pFeature>
+      <pFeature>Scan3dCoordinateReferenceValue</pFeature>
+   </Category>
+   <Integer Name="Width" NameSpace="Standard">
+      <ToolTip>Width of the image provided by the device (in pixels).</ToolTip>
+      <Description>Width of the image provided by the device (in pixels).</Description>
+      <DisplayName>Width</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <Streamable>Yes</Streamable>
+      <pValue>Width_Val</pValue>
+      <Min>100</Min>
+      <Max>800</Max>
+   </Integer>
+   <Integer Name="Height" NameSpace="Standard">
+      <ToolTip>Height of the image provided by the device (in pixels).</ToolTip>
+      <Description>Height of the image provided by the device (in pixels).</Description>
+      <DisplayName>Height</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <Streamable>Yes</Streamable>
+      <pValue>Height_Val</pValue>
+      <Min>100</Min>
+      <Max>800</Max>
+   </Integer>
+   <Float Name="AspectRatio" NameSpace="Custom">
+      <ToolTip>Aspect ration (width/height) of the playground</ToolTip>
+      <Description>The only reason for this feature is to demonstrate support of floating point registers.</Description>
+      <DisplayName>Aspect Ratio</DisplayName>
+      <Visibility>Guru</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>AspectRatio_Val</pValue>
+   </Float>
+   <Enumeration Name="ComponentSelector" NameSpace="Standard">
+      <ToolTip>Selects a component to activate/deactivate its data streaming.</ToolTip>
+      <Description>Selects a component to activate/deactivate its data streaming.</Description>
+      <DisplayName>Component Selector</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <EnumEntry Name="Intensity" NameSpace="Standard">
+         <ToolTip>The acquisition of intensity (monochrome or color) of the visible reflected light is controlled.</ToolTip>
+         <Description>The acquisition of intensity (monochrome or color) of the visible reflected light is controlled.</Description>
+         <DisplayName>Intensity</DisplayName>
+         <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="Range" NameSpace="Standard">
+         <ToolTip>The acquisition of range (distance) data is controlled.</ToolTip>
+         <Description>The acquisition of range (distance) data is controlled. The data produced may be only range (2.5D) or a point cloud giving the 3D coordinates depending on the Scan3dControl.</Description>
+         <DisplayName>Range</DisplayName>
+         <Value>1</Value>
+      </EnumEntry>
+      <pValue>ComponentSelector_Val</pValue>
+      <pSelected>ComponentEnable</pSelected>
+      <pSelected>PixelFormat</pSelected>
+      <pSelected>ComponentIDValue</pSelected>
+   </Enumeration>
+   <Integer Name="ComponentSelector_Val" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Value>0</Value>
+      <Min>0</Min>
+      <Max>1</Max>
+   </Integer>
+   <Boolean Name="ComponentEnable" NameSpace="Standard">
+      <ToolTip>Controls if the selected component streaming is active.</ToolTip>
+      <Description>Controls if the selected component streaming is active.</Description>
+      <DisplayName>Component Enable</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pIsLocked>ComponentEnable_LockCalc</pIsLocked>
+      <Streamable>Yes</Streamable>
+      <pValue>ComponentEnable_ValConv</pValue>
+   </Boolean>
+   <Integer Name="ComponentEnable_LockCalc" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <pIndex>ComponentSelector_Val</pIndex>
+      <ValueIndexed Index="0">1</ValueIndexed>
+      <pValueDefault>GenDCStreamActive_Calc</pValueDefault>
+   </Integer>
+   <Integer Name="ComponentEnable_ValConv" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <pIndex>ComponentSelector_Val</pIndex>
+      <ValueIndexed Index="0">1</ValueIndexed>
+      <pValueIndexed Index="1">RangeEnable_Val</pValueIndexed>
+      <ValueDefault>0</ValueDefault>
+   </Integer>
+   <IntSwissKnife Name="GenDCStreamActive_Calc" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <pVariable Name="TLPARLK">TLParamsLocked</pVariable>
+      <pVariable Name="GDCON">GenDCModeOn_Calc</pVariable>
+      <Formula><![CDATA[ TLPARLK && GDCON ]]></Formula>
+   </IntSwissKnife>
+   <Enumeration Name="PixelFormat" NameSpace="Standard">
+      <ToolTip>Format of the pixels provided by the device.</ToolTip>
+      <Description>Format of the pixels provided by the device. It represents all the information provided by PixelSize, PixelColorFilter combined in a single feature.</Description>
+      <DisplayName>Pixel Format</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pIsLocked>PixelFormat_LockCalc</pIsLocked>
+      <Streamable>Yes</Streamable>
+      <EnumEntry Name="RGBa8" NameSpace="Standard">
+         <ToolTip>Red-Green-Blue-alpha 8-bit</ToolTip>
+         <Description>Red-Green-Blue-alpha 8-bit</Description>
+         <DisplayName>RGBa8</DisplayName>
+         <pIsAvailable>IntensityFormats_AvailCalc</pIsAvailable>
+         <Value>0x02200016</Value>
+      </EnumEntry>
+      <EnumEntry Name="Mono8" NameSpace="Standard">
+         <ToolTip>Monochrome 8-bit</ToolTip>
+         <Description>Monochrome 8-bit</Description>
+         <DisplayName>Mono8</DisplayName>
+         <pIsAvailable>IntensityFormats_AvailCalc</pIsAvailable>
+         <Value>0x01080001</Value>
+      </EnumEntry>
+      <EnumEntry Name="Coord3D_ABC32f_Planar" NameSpace="Standard">
+         <ToolTip>3D coordinate A-B-C 32-bit floating point planar</ToolTip>
+         <Description>3D coordinate A-B-C 32-bit floating point planar</Description>
+         <DisplayName>Coord3D_ABC32f_Planar</DisplayName>
+         <pIsAvailable>RangeFormats_AvailCalc</pIsAvailable>
+         <Value>0x026000C1</Value>
+      </EnumEntry>
+      <pValue>PixelFormat_ValConv</pValue>
+   </Enumeration>
+   <Integer Name="PixelFormat_LockCalc" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <pIndex>ComponentSelector_Val</pIndex>
+      <ValueIndexed Index="0">0</ValueIndexed>
+      <ValueDefault>1</ValueDefault>
+   </Integer>
+   <Integer Name="IntensityFormats_AvailCalc" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <pIndex>ComponentSelector_Val</pIndex>
+      <ValueIndexed Index="0">1</ValueIndexed>
+      <ValueDefault>0</ValueDefault>
+   </Integer>
+   <Integer Name="RangeFormats_AvailCalc" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <pIndex>ComponentSelector_Val</pIndex>
+      <ValueIndexed Index="1">1</ValueIndexed>
+      <ValueDefault>0</ValueDefault>
+   </Integer>
+   <Integer Name="PixelFormat_ValConv" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <pIndex>ComponentSelector_Val</pIndex>
+      <pValueIndexed Index="0">IntensityPixelFormat_Val</pValueIndexed>
+      <ValueIndexed Index="1">0x026000C1</ValueIndexed>
+      <ValueDefault>0</ValueDefault>
+   </Integer>
+   <Integer Name="ComponentIDValue" NameSpace="Standard">
+      <ToolTip>Returns a unique identifier value that corresponds to type of the component selected by ComponentSelector.</ToolTip>
+      <Description>Returns a unique identifier value that corresponds to type of the component selected by ComponentSelector.</Description>
+      <DisplayName>Component ID Value</DisplayName>
+      <Visibility>Expert</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>ComponentIDValue_ValCalc</pValue>
+   </Integer>
+   <Integer Name="ComponentIDValue_ValCalc" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <pIndex>ComponentSelector_Val</pIndex>
+      <ValueIndexed Index="0">1</ValueIndexed>
+      <ValueIndexed Index="1">4</ValueIndexed>
+      <ValueDefault>0</ValueDefault>
+   </Integer>
+   <Integer Name="PayloadSize" NameSpace="Standard">
+      <ToolTip>Provides the number of bytes transferred for each image or chunk on the stream channel.</ToolTip>
+      <Description>Provides the number of bytes transferred for each image or chunk on the stream channel. This includes any end-of-line, end-of-frame statistics or other stamp data. This is the total size of data payload for a data block.</Description>
+      <DisplayName>Payload Size</DisplayName>
+      <Visibility>Expert</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>PayloadSize_Val</pValue>
+      <Unit>B</Unit>
+   </Integer>
+   <Enumeration Name="GenDCStreamingMode" NameSpace="Standard">
+      <ToolTip>Controls the device's streaming format.</ToolTip>
+      <Description>Controls the device's streaming format.</Description>
+      <DisplayName>GenDC Streaming Mode</DisplayName>
+      <Visibility>Guru</Visibility>
+      <pIsLocked>TLParamsLocked</pIsLocked>
+      <EnumEntry Name="Off" NameSpace="Standard">
+         <ToolTip>The device will only stream data in its native format.</ToolTip>
+         <Description>The device will only stream data in its native format.</Description>
+         <DisplayName>Off</DisplayName>
+         <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="On" NameSpace="Standard">
+         <ToolTip>The device will stream all its data in the generic GenDC format.</ToolTip>
+         <Description>The device will stream all its data in the generic GenDC format.</Description>
+         <DisplayName>On</DisplayName>
+         <Value>1</Value>
+      </EnumEntry>
+      <pValue>GenDCStreamingMode_Val</pValue>
+   </Enumeration>
+   <Enumeration Name="GenDCStreamingStatus" NameSpace="Standard">
+      <ToolTip>Returns whether the current device data streaming format is GenDC</ToolTip>
+      <Description>Returns whether the current device data streaming format is GenDC.</Description>
+      <DisplayName>GenDC Streaming Status</DisplayName>
+      <Visibility>Guru</Visibility>
+      <pIsLocked>TLParamsLocked</pIsLocked>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <EnumEntry Name="Off" NameSpace="Standard">
+         <ToolTip>The device stream data in its native format.</ToolTip>
+         <Description>The device stream data in its native format.</Description>
+         <DisplayName>Off</DisplayName>
+         <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="On" NameSpace="Standard">
+         <ToolTip>The device stream all its data in the generic GenDC format.</ToolTip>
+         <Description>The device stream all its data in the generic GenDC format.</Description>
+         <DisplayName>On</DisplayName>
+         <Value>1</Value>
+      </EnumEntry>
+      <pValue>GenDCStreamingMode_Val</pValue>
+   </Enumeration>
+   <Integer Name="GenDCModeOn_Calc" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <pIndex>GenDCStreamingMode_Val</pIndex>
+      <ValueIndexed Index="1">1</ValueIndexed>
+      <ValueDefault>0</ValueDefault>
+   </Integer>
+   <Enumeration Name="AcquisitionMode" NameSpace="Standard">
+      <ToolTip>Sets the acquisition mode of the device.</ToolTip>
+      <Description>Sets the acquisition mode of the device. It defines mainly the number of frames to capture during an acquisition and the way the acquisition stops.</Description>
+      <DisplayName>Acquisition Mode</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <EnumEntry Name="Continuous" NameSpace="Standard">
+         <ToolTip>Frames are captured continuously until stopped with the AcquisitionStop command.</ToolTip>
+         <Description>Frames are captured continuously until stopped with the AcquisitionStop command.</Description>
+         <DisplayName>Continuous</DisplayName>
+         <Value>2</Value>
+      </EnumEntry>
+      <Value>2</Value>
+   </Enumeration>
+   <Command Name="AcquisitionStart" NameSpace="Standard">
+      <ToolTip>Starts the Acquisition of the device.</ToolTip>
+      <Description>Starts the Acquisition of the device. The number of frames captured is specified by AcquisitionMode.</Description>
+      <DisplayName>Acquisition Start</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>WO</ImposedAccessMode>
+      <pValue>AcquisitionStart_Val</pValue>
+      <CommandValue>1</CommandValue>
+   </Command>
+   <Command Name="AcquisitionStop" NameSpace="Standard">
+      <ToolTip>Stops the Acquisition of the device at the end of the current Frame.</ToolTip>
+      <Description>Stops the Acquisition of the device at the end of the current Frame. It is mainly used when AcquisitionMode is Continuous but can be used in any acquisition mode.</Description>
+      <DisplayName>Acquisition Stop</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>WO</ImposedAccessMode>
+      <pValue>AcquisitionStop_Val</pValue>
+      <CommandValue>1</CommandValue>
+   </Command>
+   <Float Name="AcquisitionFrameRate" NameSpace="Standard">
+      <ToolTip>Controls the acquisition rate (in Hertz) at which the frames are captured.</ToolTip>
+      <Description>Controls the acquisition rate (in Hertz) at which the frames are captured.</Description>
+      <DisplayName>Acquisition Frame Rate</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <Streamable>Yes</Streamable>
+      <pValue>AcquisitionFrameRate_Val</pValue>
+      <Min>1.0</Min>
+      <Max>200.0</Max>
+      <Unit>Hz</Unit>
+   </Float>
+   <Boolean Name="ChunkModeActive" NameSpace="Standard">
+      <ToolTip>Activates the inclusion of Chunk data in the payload of the image.</ToolTip>
+      <Description>Activates the inclusion of Chunk data in the payload of the image.</Description>
+      <DisplayName>Chunk Mode Active</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsLocked>ChunkConfig_LockCalc</pIsLocked>
+      <Streamable>Yes</Streamable>
+      <pValue>ChunkModeActive_Val</pValue>
+   </Boolean>
+   <Enumeration Name="ChunkSelector" NameSpace="Standard">
+      <ToolTip>Selects which chunk to enable or control.</ToolTip>
+      <Description>Selects which chunk to enable or control.</Description>
+      <DisplayName>Chunk Selector</DisplayName>
+      <Visibility>Expert</Visibility>
+      <EnumEntry Name="NrBounces" NameSpace="Custom">
+         <ToolTip>Number of game ball bounces</ToolTip>
+         <Description>Number of game ball bounces</Description>
+         <DisplayName>Nr Bounces</DisplayName>
+         <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="Scan3dData" NameSpace="Custom">
+         <ToolTip>Chunk carrying all the 3D data descriptions</ToolTip>
+         <Description>Chunk carrying all the 3D data descriptions</Description>
+         <DisplayName>Scan 3d Data</DisplayName>
+         <Value>1</Value>
+      </EnumEntry>
+      <Value>0</Value>
+      <pSelected>ChunkEnable</pSelected>
+   </Enumeration>
+   <Boolean Name="ChunkEnable" NameSpace="Standard">
+      <ToolTip>Enables the inclusion of the selected chunk data in the payload of the image.</ToolTip>
+      <Description>Enables the inclusion of the selected chunk data in the payload of the image.</Description>
+      <DisplayName>Chunk Enable</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsLocked>ChunkConfig_LockCalc</pIsLocked>
+      <Streamable>Yes</Streamable>
+      <pValue>ChunkEnable_ValDisp</pValue>
+   </Boolean>
+   <Integer Name="ChunkEnable_ValDisp" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <pIndex>ChunkSelector</pIndex>
+      <pValueIndexed Index="0">GameChunkEnable_Val</pValueIndexed>
+      <pValueIndexed Index="1">Scan3dChunkEnable_Val</pValueIndexed>
+      <ValueDefault>0</ValueDefault>
+   </Integer>
+   <Integer Name="ChunkConfig_LockCalc" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <pValue>GenDCStreamActive_Calc</pValue>
+   </Integer>
+   <Integer Name="ChunkNrBounces" NameSpace="Custom">
+      <ToolTip>Nr ball bounces since start of the game.</ToolTip>
+      <Description>Nr ball bounces since start of the game.</Description>
+      <DisplayName>Chunk Nr Bounces</DisplayName>
+      <Visibility>Expert</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>ChunkNrBounces_Val</pValue>
+   </Integer>
+   <Enumeration Name="ChunkComponentSelector" NameSpace="Standard">
+      <ToolTip>Selects the Component from which to retrieve data from.</ToolTip>
+      <Description>Selects the Component from which to retrieve data from.</Description>
+      <DisplayName>Chunk Component Selector</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>ChunkScan3dFeatures_AvailCalc</pIsAvailable>
+      <EnumEntry Name="Intensity" NameSpace="Standard">
+         <ToolTip>The image data is the intensity component (visible).</ToolTip>
+         <Description>The image data is the intensity component (visible).</Description>
+         <DisplayName>Intensity</DisplayName>
+         <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="Range" NameSpace="Standard">
+         <ToolTip>The image data is the range component (distance or depth).</ToolTip>
+         <Description>The image data is the range component (distance or depth).</Description>
+         <DisplayName>Range</DisplayName>
+         <Value>1</Value>
+      </EnumEntry>
+      <pValue>ChunkComponentSelector_Val</pValue>
+      <pSelected>ChunkComponentIDValue</pSelected>
+   </Enumeration>
+   <Integer Name="ChunkComponentSelector_Val" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Value>0</Value>
+   </Integer>
+   <Integer Name="ChunkComponentIDValue" NameSpace="Standard">
+      <ToolTip>Returns a unique Identifier value that corresponds to the selected chunk Component.</ToolTip>
+      <Description>Returns a unique Identifier value that corresponds to the selected chunk Component.</Description>
+      <DisplayName>Chunk Component ID Value</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>ChunkScan3dFeatures_AvailCalc</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>ChunkComponentIDValue_ValCalc</pValue>
+   </Integer>
+   <Integer Name="ChunkComponentIDValue_ValCalc" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <pIndex>ChunkComponentSelector_Val</pIndex>
+      <ValueIndexed Index="0">1</ValueIndexed>
+      <ValueIndexed Index="1">4</ValueIndexed>
+      <ValueDefault>0</ValueDefault>
+   </Integer>
+   <Enumeration Name="ChunkScan3dDistanceUnit" NameSpace="Standard">
+      <ToolTip>Returns the Distance Unit of the payload image.</ToolTip>
+      <Description>Returns the Distance Unit of the payload image.</Description>
+      <DisplayName>Chunk Scan 3d Distance Unit</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>ChunkScan3dFeatures_AvailCalc</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <EnumEntry Name="Millimeter" NameSpace="Standard">
+         <ToolTip>Default value.</ToolTip>
+         <Description>Default value. Distance values are in millimeter units.</Description>
+         <DisplayName>Millimeter</DisplayName>
+         <Value>0</Value>
+      </EnumEntry>
+      <Value>0</Value>
+   </Enumeration>
+   <IntSwissKnife Name="ChunkScan3dFeatures_AvailCalc" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <pVariable Name="DUMMY">ChunkScan3dDummy_Val</pVariable>
+      <Formula><![CDATA[ 1 ]]></Formula>
+   </IntSwissKnife>
+   <Enumeration Name="ChunkScan3dOutputMode" NameSpace="Standard">
+      <ToolTip>Returns the Calibrated Mode of the payload image.</ToolTip>
+      <Description>Returns the Calibrated Mode of the payload image.</Description>
+      <DisplayName>Chunk Scan 3d Output Mode</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>ChunkScan3dFeatures_AvailCalc</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <EnumEntry Name="CalibratedABC_Grid" NameSpace="Standard">
+         <ToolTip>3 Coordinates in grid organization.</ToolTip>
+         <Description>3 Coordinates in grid organization. The full 3 coordinate data with the grid array organization from the sensor kept.</Description>
+         <DisplayName>Calibrated ABC Grid</DisplayName>
+         <Value>1</Value>
+      </EnumEntry>
+      <Value>1</Value>
+   </Enumeration>
+   <Enumeration Name="ChunkScan3dCoordinateSystem" NameSpace="Standard">
+      <ToolTip>Returns the Coordinate System of the image included in the payload.</ToolTip>
+      <Description>Returns the Coordinate System of the image included in the payload.</Description>
+      <DisplayName>Chunk Scan 3d Coordinate System</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>ChunkScan3dFeatures_AvailCalc</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <EnumEntry Name="Cartesian" NameSpace="Standard">
+         <ToolTip>Default value.</ToolTip>
+         <Description>Default value. 3-axis orthogonal, right-hand X-Y-Z.</Description>
+         <DisplayName>Cartesian</DisplayName>
+         <Value>0</Value>
+      </EnumEntry>
+      <Value>0</Value>
+   </Enumeration>
+   <Enumeration Name="ChunkScan3dCoordinateSystemReference" NameSpace="Standard">
+      <ToolTip>Returns the Coordinate System Position of the image included in the payload.</ToolTip>
+      <Description>Returns the Coordinate System Position of the image included in the payload.</Description>
+      <DisplayName>Chunk Scan 3d Coordinate System Reference</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>ChunkScan3dFeatures_AvailCalc</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <EnumEntry Name="Anchor" NameSpace="Standard">
+         <ToolTip>Default value.</ToolTip>
+         <Description>Default value. Original fixed reference. The coordinate system fixed relative the camera reference point marker is used.</Description>
+         <DisplayName>Anchor</DisplayName>
+         <Value>0</Value>
+      </EnumEntry>
+      <Value>0</Value>
+   </Enumeration>
+   <Enumeration Name="ChunkScan3dCoordinateSelector" NameSpace="Standard">
+      <ToolTip>Selects which Coordinate to retrieve data from.</ToolTip>
+      <Description>Selects which Coordinate to retrieve data from.</Description>
+      <DisplayName>Chunk Scan 3d Coordinate Selector</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>ChunkScan3dFeatures_AvailCalc</pIsAvailable>
+      <EnumEntry Name="CoordinateA" NameSpace="Standard">
+         <ToolTip>The first (X or Theta) coordinate.</ToolTip>
+         <Description>The first (X or Theta) coordinate</Description>
+         <DisplayName>Coordinate A</DisplayName>
+         <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="CoordinateB" NameSpace="Standard">
+         <ToolTip>The second (Y or Phi) coordinate.</ToolTip>
+         <Description>The second (Y or Phi) coordinate</Description>
+         <DisplayName>Coordinate B</DisplayName>
+         <Value>1</Value>
+      </EnumEntry>
+      <EnumEntry Name="CoordinateC" NameSpace="Standard">
+         <ToolTip>The third (Z or Rho) coordinate.</ToolTip>
+         <Description>The third (Z or Rho) coordinate.</Description>
+         <DisplayName>Coordinate C</DisplayName>
+         <Value>2</Value>
+      </EnumEntry>
+      <pValue>ChunkScan3dCoordinateSelector_Val</pValue>
+      <pSelected>ChunkScan3dCoordinateScale</pSelected>
+      <pSelected>ChunkScan3dCoordinateOffset</pSelected>
+      <pSelected>ChunkScan3dInvalidDataFlag</pSelected>
+   </Enumeration>
+   <Integer Name="ChunkScan3dCoordinateSelector_Val" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Value>0</Value>
+      <Min>0</Min>
+      <Max>2</Max>
+   </Integer>
+   <Float Name="ChunkScan3dCoordinateScale" NameSpace="Standard">
+      <ToolTip>Returns the Scale for the selected coordinate axis of the image included in the payload.</ToolTip>
+      <Description>Returns the Scale for the selected coordinate axis of the image included in the payload.</Description>
+      <DisplayName>Chunk Scan 3d Coordinate Scale</DisplayName>
+      <Visibility>Expert</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>ChunkScan3dCoordinateScale_Val</pValue>
+   </Float>
+   <Float Name="ChunkScan3dCoordinateOffset" NameSpace="Standard">
+      <ToolTip>Returns the Offset for the selected coordinate axis of the image included in the payload.</ToolTip>
+      <Description>Returns the Offset for the selected coordinate axis of the image included in the payload.</Description>
+      <DisplayName>Chunk Scan 3d Coordinate Offset</DisplayName>
+      <Visibility>Expert</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>ChunkScan3dCoordinateOffset_Val</pValue>
+   </Float>
+   <Boolean Name="ChunkScan3dInvalidDataFlag" NameSpace="Standard">
+      <ToolTip>Returns if a specific non-valid data flag is used in the data stream.</ToolTip>
+      <Description>Returns if a specific non-valid data flag is used in the data stream.</Description>
+      <DisplayName>Chunk Scan 3d Invalid Data Flag</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>ChunkScan3dFeatures_AvailCalc</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <Value>0</Value>
+   </Boolean>
+   <Enumeration Name="ChunkScan3dCoordinateReferenceSelector" NameSpace="Standard">
+      <ToolTip>Selector to read a coordinate system reference value defining the transform of a point from one system to the other.</ToolTip>
+      <Description>Selector to read a coordinate system reference value defining the transform of a point from one system to the other.</Description>
+      <DisplayName>Chunk Scan 3d Coordinate Reference Selector</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>ChunkScan3dFeatures_AvailCalc</pIsAvailable>
+      <EnumEntry Name="RotationX" NameSpace="Standard">
+         <ToolTip>Rotation around X axis.</ToolTip>
+         <Description>Rotation around X axis.</Description>
+         <DisplayName>Rotation X</DisplayName>
+         <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="RotationY" NameSpace="Standard">
+         <ToolTip>Rotation around Y axis.</ToolTip>
+         <Description>Rotation around Y axis.</Description>
+         <DisplayName>Rotation Y</DisplayName>
+         <Value>1</Value>
+      </EnumEntry>
+      <EnumEntry Name="RotationZ" NameSpace="Standard">
+         <ToolTip>Rotation around Z axis.</ToolTip>
+         <Description>Rotation around Z axis.</Description>
+         <DisplayName>Rotation Z</DisplayName>
+         <Value>2</Value>
+      </EnumEntry>
+      <EnumEntry Name="TranslationX" NameSpace="Standard">
+         <ToolTip>X axis translation.</ToolTip>
+         <Description>X axis translation.</Description>
+         <DisplayName>Translation X</DisplayName>
+         <Value>3</Value>
+      </EnumEntry>
+      <EnumEntry Name="TranslationY" NameSpace="Standard">
+         <ToolTip>Y axis translation.</ToolTip>
+         <Description>Y axis translation.</Description>
+         <DisplayName>Translation Y</DisplayName>
+         <Value>4</Value>
+      </EnumEntry>
+      <EnumEntry Name="TranslationZ" NameSpace="Standard">
+         <ToolTip>Z axis translation.</ToolTip>
+         <Description>Z axis translation.</Description>
+         <DisplayName>Translation Z</DisplayName>
+         <Value>5</Value>
+      </EnumEntry>
+      <pValue>ChunkScan3dCoordinateReferenceSelector_Val</pValue>
+      <pSelected>ChunkScan3dCoordinateReferenceValue</pSelected>
+   </Enumeration>
+   <Integer Name="ChunkScan3dCoordinateReferenceSelector_Val" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Value>0</Value>
+      <Min>0</Min>
+      <Max>5</Max>
+   </Integer>
+   <Float Name="ChunkScan3dCoordinateReferenceValue" NameSpace="Standard">
+      <ToolTip>Reads the value of a position or pose coordinate for the anchor or transformed coordinate systems relative to the reference point.</ToolTip>
+      <Description>Reads the value of a position or pose coordinate for the anchor or transformed coordinate systems relative to the reference point.</Description>
+      <DisplayName>Chunk Scan 3d Coordinate Reference Value</DisplayName>
+      <Visibility>Expert</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>ChunkScan3dCoordinateReferenceValue_Val</pValue>
+   </Float>
+   <Enumeration Name="EventSelector" NameSpace="Standard">
+      <ToolTip>Selects which event to signal to the host application.</ToolTip>
+      <Description>Selects which event to signal to the host application.</Description>
+      <DisplayName>Event Selector</DisplayName>
+      <Visibility>Expert</Visibility>
+      <EnumEntry Name="GameProgress" NameSpace="Custom">
+         <ToolTip>Event describing progress of the ping-pong game.</ToolTip>
+         <Description>Event describing progress of the ping-pong game.</Description>
+         <DisplayName>Game Progress</DisplayName>
+         <Value>0</Value>
+      </EnumEntry>
+      <Value>0</Value>
+      <pSelected>EventNotification</pSelected>
+   </Enumeration>
+   <Enumeration Name="EventNotification" NameSpace="Standard">
+      <ToolTip>Activate or deactivate the notification to the host application of the occurrence of the selected Event.</ToolTip>
+      <Description>Activate or deactivate the notification to the host application of the occurrence of the selected Event.</Description>
+      <DisplayName>Event Notification</DisplayName>
+      <Visibility>Expert</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <EnumEntry Name="Off" NameSpace="Standard">
+         <ToolTip>The selected event notification is disabled.</ToolTip>
+         <Description>The selected event notification is disabled.</Description>
+         <DisplayName>Off</DisplayName>
+         <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="On" NameSpace="Standard">
+         <ToolTip>The selected event notification is enabled.</ToolTip>
+         <Description>The selected event notification is enabled.</Description>
+         <DisplayName>On</DisplayName>
+         <Value>1</Value>
+      </EnumEntry>
+      <Value>1</Value>
+   </Enumeration>
+   <Category Name="EventGameProgressData" NameSpace="Custom">
+      <ToolTip>Category that contains all the data features related to the Game Progress Event.</ToolTip>
+      <Description>Category that contains all the data features related to the Game Progress Event.</Description>
+      <DisplayName>Event Game Progress Data</DisplayName>
+      <Visibility>Expert</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pFeature>EventGameProgress</pFeature>
+      <pFeature>EventGameProgressMessage</pFeature>
+   </Category>
+   <Integer Name="EventGameProgress" NameSpace="Custom">
+      <ToolTip>Returns the unique identifier of the Game Progress event type.</ToolTip>
+      <Description>Returns the unique identifier of the Game Progress event type.</Description>
+      <DisplayName>Event Game Progress</DisplayName>
+      <Visibility>Expert</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>EventGameProgress_Val</pValue>
+      <Representation>HexNumber</Representation>
+   </Integer>
+   <String Name="EventGameProgressMessage" NameSpace="Custom">
+      <ToolTip>Asynchronous messages about the game progress.</ToolTip>
+      <Description>Asynchronous messages about the game progress.</Description>
+      <DisplayName>Event Game Progress Message</DisplayName>
+      <Visibility>Expert</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>EventGameProgressMessage_Val</pValue>
+   </String>
+   <Integer Name="BouncingBallSize" NameSpace="Custom">
+      <ToolTip>Size of the bouncing ball.</ToolTip>
+      <Description>Size of the bouncing ball.</Description>
+      <DisplayName>Bouncing Ball Size</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <Streamable>Yes</Streamable>
+      <pValue>BouncingBallSize_Val</pValue>
+      <Min>1</Min>
+      <Max>40</Max>
+   </Integer>
+   <Command Name="FancyBallOperation" NameSpace="Custom">
+      <ToolTip>Switches the ball temporarily to a very fancy look.</ToolTip>
+      <Description>Switches the ball temporarily to a very fancy look. Intended to demonstrate non-instant commands.</Description>
+      <DisplayName>Fancy Ball Operation</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pIsLocked>FancyBallOperation_LockCalc</pIsLocked>
+      <pValue>FancyBallOperation_Val</pValue>
+      <CommandValue>1</CommandValue>
+   </Command>
+   <Integer Name="FancyBallOperation_LockCalc" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <pValue>FancyBallOperation_Val</pValue>
+   </Integer>
+   <Enumeration Name="Scan3dDistanceUnit" NameSpace="Standard">
+      <ToolTip>Specifies the unit used when delivering (calibrated) distance data.</ToolTip>
+      <Description>Specifies the unit used when delivering (calibrated) distance data.</Description>
+      <DisplayName>Scan 3d Distance Unit</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>RangeEnable_Val</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <EnumEntry Name="Millimeter" NameSpace="Standard">
+         <ToolTip>Distance values are in millimeter units (default).</ToolTip>
+         <Description>Distance values are in millimeter units (default).</Description>
+         <DisplayName>Millimeter</DisplayName>
+         <Value>0</Value>
+      </EnumEntry>
+      <Value>0</Value>
+   </Enumeration>
+   <Enumeration Name="Scan3dCoordinateSystem" NameSpace="Standard">
+      <ToolTip>Specifies the Coordinate system to use for the device.</ToolTip>
+      <Description>Specifies the Coordinate system to use for the device.</Description>
+      <DisplayName>Scan 3d Coordinate System</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>RangeEnable_Val</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <EnumEntry Name="Cartesian" NameSpace="Standard">
+         <ToolTip>Default value.</ToolTip>
+         <Description>Default value. 3-axis orthogonal, right-hand X-Y-Z.</Description>
+         <DisplayName>Cartesian</DisplayName>
+         <Value>0</Value>
+      </EnumEntry>
+      <Value>0</Value>
+   </Enumeration>
+   <Enumeration Name="Scan3dOutputMode" NameSpace="Standard">
+      <ToolTip>Controls the Calibration and data organization of the device and  the coordinates transmitted.</ToolTip>
+      <Description>Controls the Calibration and data organization of the device and  the coordinates transmitted.</Description>
+      <DisplayName>Scan 3d Output Mode</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>RangeEnable_Val</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <EnumEntry Name="CalibratedABC_Grid" NameSpace="Standard">
+         <ToolTip>3 Coordinates in grid organization.</ToolTip>
+         <Description>3 Coordinates in grid organization. The full 3 coordinate data with the grid array organization from the sensor kept.</Description>
+         <DisplayName>Calibrated ABC Grid</DisplayName>
+         <Value>1</Value>
+      </EnumEntry>
+      <Value>1</Value>
+   </Enumeration>
+   <Enumeration Name="Scan3dCoordinateSystemReference" NameSpace="Standard">
+      <ToolTip>Defines coordinate system reference location.</ToolTip>
+      <Description>Defines coordinate system reference location.</Description>
+      <DisplayName>Scan 3d Coordinate System Reference</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>RangeEnable_Val</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <EnumEntry Name="Anchor" NameSpace="Standard">
+         <ToolTip>Default value.</ToolTip>
+         <Description>Default value. Original fixed reference. The coordinate system fixed relative the camera reference point marker is used.</Description>
+         <DisplayName>Anchor</DisplayName>
+         <Value>0</Value>
+      </EnumEntry>
+      <Value>0</Value>
+   </Enumeration>
+   <Enumeration Name="Scan3dCoordinateSelector" NameSpace="Standard">
+      <ToolTip>Selects the individual coordinates in the vectors for 3D information/transformation.</ToolTip>
+      <Description>Selects the individual coordinates in the vectors for 3D information/transformation.</Description>
+      <DisplayName>Scan 3d Coordinate Selector</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>RangeEnable_Val</pIsAvailable>
+      <EnumEntry Name="CoordinateA" NameSpace="Standard">
+         <ToolTip>The first (X or Theta) coordinate.</ToolTip>
+         <Description>The first (X or Theta) coordinate</Description>
+         <DisplayName>Coordinate A</DisplayName>
+         <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="CoordinateB" NameSpace="Standard">
+         <ToolTip>The second (Y or Phi) coordinate.</ToolTip>
+         <Description>The second (Y or Phi) coordinate</Description>
+         <DisplayName>Coordinate B</DisplayName>
+         <Value>1</Value>
+      </EnumEntry>
+      <EnumEntry Name="CoordinateC" NameSpace="Standard">
+         <ToolTip>The third (Z or Rho) coordinate.</ToolTip>
+         <Description>The third (Z or Rho) coordinate.</Description>
+         <DisplayName>Coordinate C</DisplayName>
+         <Value>2</Value>
+      </EnumEntry>
+      <Value>0</Value>
+      <pSelected>Scan3dCoordinateScale</pSelected>
+      <pSelected>Scan3dCoordinateOffset</pSelected>
+      <pSelected>Scan3dInvalidDataFlag</pSelected>
+   </Enumeration>
+   <Float Name="Scan3dCoordinateScale" NameSpace="Standard">
+      <ToolTip>Scale factor when transforming a pixel from relative coordinates to world coordinates.</ToolTip>
+      <Description>Scale factor when transforming a pixel from relative coordinates to world coordinates.</Description>
+      <DisplayName>Scan 3d Coordinate Scale</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>RangeEnable_Val</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <Value>1.0</Value>
+   </Float>
+   <Float Name="Scan3dCoordinateOffset" NameSpace="Standard">
+      <ToolTip>Offset when transforming a pixel from relative coordinates to world coordinates.</ToolTip>
+      <Description>Offset when transforming a pixel from relative coordinates to world coordinates.</Description>
+      <DisplayName>Scan 3d Coordinate Offset</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>RangeEnable_Val</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <Value>0.0</Value>
+   </Float>
+   <Boolean Name="Scan3dInvalidDataFlag" NameSpace="Standard">
+      <ToolTip>Enables the definition of a non-valid flag value in the data stream.</ToolTip>
+      <Description>Enables the definition of a non-valid flag value in the data stream. Note that the confidence output is an alternate recommended way to identify non-valid pixels. Using a Scan3dInvalidDataValue may give processing penalties due to special handling.</Description>
+      <DisplayName>Scan 3d Invalid Data Flag</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>RangeEnable_Val</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <Value>0</Value>
+   </Boolean>
+   <Enumeration Name="Scan3dCoordinateReferenceSelector" NameSpace="Standard">
+      <ToolTip>Sets the index to read a coordinate system reference value defining the transform of a point from the current (Anchor or Transformed) system to the reference system.</ToolTip>
+      <Description>Sets the index to read a coordinate system reference value defining the transform of a point from the current (Anchor or Transformed) system to the reference system.</Description>
+      <DisplayName>Scan 3d Coordinate Reference Selector</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>RangeEnable_Val</pIsAvailable>
+      <EnumEntry Name="RotationX" NameSpace="Standard">
+         <ToolTip>Rotation around X axis.</ToolTip>
+         <Description>Rotation around X axis.</Description>
+         <DisplayName>Rotation X</DisplayName>
+         <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="RotationY" NameSpace="Standard">
+         <ToolTip>Rotation around Y axis.</ToolTip>
+         <Description>Rotation around Y axis.</Description>
+         <DisplayName>Rotation Y</DisplayName>
+         <Value>1</Value>
+      </EnumEntry>
+      <EnumEntry Name="RotationZ" NameSpace="Standard">
+         <ToolTip>Rotation around Z axis.</ToolTip>
+         <Description>Rotation around Z axis.</Description>
+         <DisplayName>Rotation Z</DisplayName>
+         <Value>2</Value>
+      </EnumEntry>
+      <EnumEntry Name="TranslationX" NameSpace="Standard">
+         <ToolTip>X axis translation.</ToolTip>
+         <Description>X axis translation.</Description>
+         <DisplayName>Translation X</DisplayName>
+         <Value>3</Value>
+      </EnumEntry>
+      <EnumEntry Name="TranslationY" NameSpace="Standard">
+         <ToolTip>Y axis translation.</ToolTip>
+         <Description>Y axis translation.</Description>
+         <DisplayName>Translation Y</DisplayName>
+         <Value>4</Value>
+      </EnumEntry>
+      <EnumEntry Name="TranslationZ" NameSpace="Standard">
+         <ToolTip>Z axis translation.</ToolTip>
+         <Description>Z axis translation.</Description>
+         <DisplayName>Translation Z</DisplayName>
+         <Value>5</Value>
+      </EnumEntry>
+      <pValue>Scan3dCoordinateReferenceSelector_Val</pValue>
+      <pSelected>Scan3dCoordinateReferenceValue</pSelected>
+   </Enumeration>
+   <Integer Name="Scan3dCoordinateReferenceSelector_Val" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Value>0</Value>
+      <Min>0</Min>
+      <Max>5</Max>
+   </Integer>
+   <Float Name="Scan3dCoordinateReferenceValue" NameSpace="Standard">
+      <ToolTip>Returns the reference value selected.</ToolTip>
+      <Description>Returns the reference value selected. Reads the value of a rotation or translation value for the current (Anchor or Transformed) coordinate system transformation to the Reference system.</Description>
+      <DisplayName>Scan 3d Coordinate Reference Value</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>RangeEnable_Val</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>Scan3dCoordinateReferenceValue_ValCalc</pValue>
+   </Float>
+   <Float Name="Scan3dCoordinateReferenceValue_ValCalc" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <pIndex>Scan3dCoordinateReferenceSelector_Val</pIndex>
+      <ValueIndexed Index="1">180</ValueIndexed>
+      <pValueIndexed Index="5">Scan3dCoordinateReferenceTranslationZ_ValCalc</pValueIndexed>
+      <ValueDefault>0</ValueDefault>
+   </Float>
+   <SwissKnife Name="Scan3dCoordinateReferenceTranslationZ_ValCalc" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <pVariable Name="SCENE_W">Width_Val</pVariable>
+      <pVariable Name="SCENE_H">Height_Val</pVariable>
+      <Formula><![CDATA[ SQRT(SCENE_W*SCENE_W + SCENE_H*SCENE_H) ]]></Formula>
+   </SwissKnife>
+   <Command Name="DeviceFeaturePersistenceStart" NameSpace="Standard">
+      <ToolTip>Indicate to the device and GenICam XML to get ready for persisting of all streamable features.</ToolTip>
+      <Description>Indicate to the device and GenICam XML to get ready for persisting of all streamable features.</Description>
+      <DisplayName>Device Feature Persistence Start</DisplayName>
+      <Visibility>Guru</Visibility>
+      <ImposedAccessMode>WO</ImposedAccessMode>
+      <pValue>DeviceFeaturePersistenceStart_Val</pValue>
+      <CommandValue>1</CommandValue>
+   </Command>
+   <Command Name="DeviceFeaturePersistenceEnd" NameSpace="Standard">
+      <ToolTip>Indicate to the device the end of feature persistence.</ToolTip>
+      <Description>Indicate to the device the end of feature persistence.</Description>
+      <DisplayName>Device Feature Persistence End</DisplayName>
+      <Visibility>Guru</Visibility>
+      <ImposedAccessMode>WO</ImposedAccessMode>
+      <pValue>DeviceFeaturePersistenceEnd_Val</pValue>
+      <CommandValue>1</CommandValue>
+   </Command>
+   <Command Name="DeviceRegistersStreamingStart" NameSpace="Standard">
+      <ToolTip>Prepare the device for registers streaming without checking for consistency.</ToolTip>
+      <Description>Prepare the device for registers streaming without checking for consistency.</Description>
+      <DisplayName>Device Registers Streaming Start</DisplayName>
+      <Visibility>Guru</Visibility>
+      <ImposedAccessMode>WO</ImposedAccessMode>
+      <pValue>DeviceRegistersStreamingStart_Val</pValue>
+      <CommandValue>1</CommandValue>
+   </Command>
+   <Command Name="DeviceRegistersStreamingEnd" NameSpace="Standard">
+      <ToolTip>Announce the end of registers streaming.</ToolTip>
+      <Description>Announce the end of registers streaming. This will do a register set validation for consistency and activate it.</Description>
+      <DisplayName>Device Registers Streaming End</DisplayName>
+      <Visibility>Guru</Visibility>
+      <ImposedAccessMode>WO</ImposedAccessMode>
+      <pValue>DeviceRegistersStreamingEnd_Val</pValue>
+      <CommandValue>1</CommandValue>
+   </Command>
+   <IntReg Name="Width_Val">
+      <Visibility>Invisible</Visibility>
+      <Address>0x50000000</Address>
+      <Length>4</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>Device</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+   <IntReg Name="Height_Val">
+      <Visibility>Invisible</Visibility>
+      <Address>0x50000004</Address>
+      <Length>4</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>Device</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+   <IntReg Name="AcquisitionFrameRate_Val">
+      <Visibility>Invisible</Visibility>
+      <Address>0x50000008</Address>
+      <Length>4</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>Device</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+   <IntReg Name="PayloadSize_Val">
+      <Visibility>Invisible</Visibility>
+      <Address>0x5000000C</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>Device</pPort>
+      <pInvalidator>GenDCStreamingMode_Val</pInvalidator>
+      <pInvalidator>RangeEnable_Val</pInvalidator>
+      <pInvalidator>ChunkModeActive_Val</pInvalidator>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+   <IntReg Name="AcquisitionStart_Val">
+      <Visibility>Invisible</Visibility>
+      <Address>0x50000010</Address>
+      <Length>4</Length>
+      <AccessMode>WO</AccessMode>
+      <pPort>Device</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+   <IntReg Name="AcquisitionStop_Val">
+      <Visibility>Invisible</Visibility>
+      <Address>0x50000014</Address>
+      <Length>4</Length>
+      <AccessMode>WO</AccessMode>
+      <pPort>Device</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+   <IntReg Name="ChunkModeActive_Val">
+      <Visibility>Invisible</Visibility>
+      <Address>0x50000018</Address>
+      <Length>4</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>Device</pPort>
+      <pInvalidator>RangeEnable_Val</pInvalidator>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+   <IntReg Name="BouncingBallSize_Val">
+      <Visibility>Invisible</Visibility>
+      <Address>0x5000001C</Address>
+      <Length>4</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>Device</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+   <IntReg Name="RangeEnable_Val">
+      <Visibility>Invisible</Visibility>
+      <Address>0x50000020</Address>
+      <Length>4</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>Device</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+   <IntReg Name="IntensityPixelFormat_Val">
+      <Visibility>Invisible</Visibility>
+      <Address>0x50000024</Address>
+      <Length>4</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>Device</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+   <IntReg Name="GameChunkEnable_Val">
+      <Visibility>Invisible</Visibility>
+      <Address>0x50000028</Address>
+      <Length>4</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>Device</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+   <IntReg Name="Scan3dChunkEnable_Val">
+      <Visibility>Invisible</Visibility>
+      <Address>0x5000002C</Address>
+      <Length>4</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>Device</pPort>
+      <pInvalidator>RangeEnable_Val</pInvalidator>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+   <IntReg Name="DeviceFeaturePersistenceStart_Val">
+      <Visibility>Invisible</Visibility>
+      <Address>0x50000030</Address>
+      <Length>4</Length>
+      <AccessMode>WO</AccessMode>
+      <pPort>Device</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+   <IntReg Name="DeviceFeaturePersistenceEnd_Val">
+      <Visibility>Invisible</Visibility>
+      <Address>0x50000034</Address>
+      <Length>4</Length>
+      <AccessMode>WO</AccessMode>
+      <pPort>Device</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+   <IntReg Name="DeviceRegistersStreamingStart_Val">
+      <Visibility>Invisible</Visibility>
+      <Address>0x50000038</Address>
+      <Length>4</Length>
+      <AccessMode>WO</AccessMode>
+      <pPort>Device</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+   <IntReg Name="DeviceRegistersStreamingEnd_Val">
+      <Visibility>Invisible</Visibility>
+      <Address>0x5000003C</Address>
+      <Length>4</Length>
+      <AccessMode>WO</AccessMode>
+      <pPort>Device</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+   <FloatReg Name="AspectRatio_Val">
+      <Visibility>Invisible</Visibility>
+      <Address>0x50000040</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>Device</pPort>
+      <pInvalidator>Width_Val</pInvalidator>
+      <pInvalidator>Height_Val</pInvalidator>
+      <Endianess>LittleEndian</Endianess>
+   </FloatReg>
+   <IntReg Name="GenDCStreamingMode_Val">
+      <Visibility>Invisible</Visibility>
+      <Address>0x50000044</Address>
+      <Length>4</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>Device</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+   <IntReg Name="GenDCFlowMappingTable_Len">
+      <Visibility>Invisible</Visibility>
+      <Address>0x50000048</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>Device</pPort>
+      <pInvalidator>RangeEnable_Val</pInvalidator>
+      <pInvalidator>ChunkModeActive_Val</pInvalidator>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+   <IntReg Name="GenDCDescriptor_Len">
+      <Visibility>Invisible</Visibility>
+      <Address>0x5000004C</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>Device</pPort>
+      <pInvalidator>RangeEnable_Val</pInvalidator>
+      <pInvalidator>ChunkModeActive_Val</pInvalidator>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+   <IntReg Name="FancyBallOperation_Val">
+      <Visibility>Invisible</Visibility>
+      <Address>0x50000050</Address>
+      <Length>4</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>Device</pPort>
+      <Cachable>NoCache</Cachable>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+   <Register Name="GenDCFlowMappingTable" NameSpace="Standard">
+      <ToolTip>Returns the GenDC Container data Flow mapping table that will be used to transport the GenDC Container.</ToolTip>
+      <Description>Returns the GenDC Container data Flow mapping table that will be used to transport the GenDC Container.</Description>
+      <DisplayName>GenDC Flow Mapping Table</DisplayName>
+      <Visibility>Guru</Visibility>
+      <pIsAvailable>GenDCModeOn_Calc</pIsAvailable>
+      <Address>0x50001000</Address>
+      <pLength>GenDCFlowMappingTable_Len</pLength>
+      <AccessMode>RO</AccessMode>
+      <pPort>Device</pPort>
+      <pInvalidator>RangeEnable_Val</pInvalidator>
+      <pInvalidator>ChunkModeActive_Val</pInvalidator>
+   </Register>
+   <Register Name="GenDCDescriptor" NameSpace="Standard">
+      <ToolTip>Returns a prefetch GenDC Descriptor that can be used as reference for the data to be streamed out by the device in its current configuration.</ToolTip>
+      <Description>Returns a prefetch GenDC Descriptor that can be used as reference for the data to be streamed out by the device in its current configuration. This information can be used to set up the receiver in advance to be ready for the data Containers to come.</Description>
+      <DisplayName>GenDC Descriptor</DisplayName>
+      <Visibility>Guru</Visibility>
+      <pIsAvailable>GenDCModeOn_Calc</pIsAvailable>
+      <Address>0x50002000</Address>
+      <pLength>GenDCDescriptor_Len</pLength>
+      <AccessMode>RO</AccessMode>
+      <pPort>Device</pPort>
+      <pInvalidator>RangeEnable_Val</pInvalidator>
+      <pInvalidator>ChunkModeActive_Val</pInvalidator>
+   </Register>
+   <IntReg Name="ChunkNrBounces_Val">
+      <Visibility>Invisible</Visibility>
+      <Address>0x0</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>GameChunkPort</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+   <IntReg Name="ChunkScan3dDummy_Val">
+      <Visibility>Invisible</Visibility>
+      <Address>0x0</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>Scan3dChunkPort</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+   <FloatReg Name="ChunkScan3dCoordinateScale_Val" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <IntSwissKnife Name="ChunkScan3dCoordinateScale_ValAddr" NameSpace="Custom">
+         <Visibility>Invisible</Visibility>
+         <pVariable Name="SEL">ChunkScan3dCoordinateSelector_Val</pVariable>
+         <Formula><![CDATA[ (SEL > 2) ? 0xFFFFFFFF : (0x4 + 4*SEL) ]]></Formula>
+      </IntSwissKnife>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>Scan3dChunkPort</pPort>
+      <Endianess>LittleEndian</Endianess>
+   </FloatReg>
+   <FloatReg Name="ChunkScan3dCoordinateOffset_Val" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <IntSwissKnife Name="ChunkScan3dCoordinateOffset_ValAddr" NameSpace="Custom">
+         <Visibility>Invisible</Visibility>
+         <pVariable Name="SEL">ChunkScan3dCoordinateSelector_Val</pVariable>
+         <Formula><![CDATA[ (SEL > 2) ? 0xFFFFFFFF : (0x10 + 4*SEL) ]]></Formula>
+      </IntSwissKnife>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>Scan3dChunkPort</pPort>
+      <Endianess>LittleEndian</Endianess>
+   </FloatReg>
+   <FloatReg Name="ChunkScan3dCoordinateReferenceValue_Val" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <IntSwissKnife Name="ChunkScan3dCoordinateReferenceValue_ValAddr" NameSpace="Custom">
+         <Visibility>Invisible</Visibility>
+         <pVariable Name="SEL">ChunkScan3dCoordinateReferenceSelector_Val</pVariable>
+         <Formula><![CDATA[ (SEL > 5) ? 0xFFFFFFFF : (0x1C + 4*SEL) ]]></Formula>
+      </IntSwissKnife>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>Scan3dChunkPort</pPort>
+      <Endianess>LittleEndian</Endianess>
+   </FloatReg>
+   <IntReg Name="EventGameProgress_Val" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x00</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>EventPort</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+   <IntReg Name="EventGameProgressMessageSize_Val">
+      <Visibility>Invisible</Visibility>
+      <Address>0x04</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>EventPort</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+   <StringReg Name="EventGameProgressMessage_Val">
+      <Visibility>Invisible</Visibility>
+      <Address>0x08</Address>
+      <pLength>EventGameProgressMessageSize_Val</pLength>
+      <AccessMode>RO</AccessMode>
+      <pPort>EventPort</pPort>
+   </StringReg>
+   <Port Name="GameChunkPort" NameSpace="Custom">
+      <ToolTip>Port for game related chunk features.</ToolTip>
+      <Description>Port for game related chunk features.</Description>
+      <Visibility>Invisible</Visibility>
+      <ChunkID>FEEDABEE</ChunkID>
+   </Port>
+   <Port Name="Scan3dChunkPort" NameSpace="Custom">
+      <ToolTip>Port for 3D related chunk features.</ToolTip>
+      <Description>Port for 3D related chunk features.</Description>
+      <Visibility>Invisible</Visibility>
+      <ChunkID>F000BAAA</ChunkID>
+   </Port>
+   <Port Name="EventPort" NameSpace="Custom">
+      <ToolTip>Port for all event features.</ToolTip>
+      <Description>Port for all event features.</Description>
+      <Visibility>Invisible</Visibility>
+      <EventID>F001</EventID>
+   </Port>
+</RegisterDescription>

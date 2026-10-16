@@ -1,0 +1,128 @@
+{
+  "$defs": {
+    "Conversion": {
+      "additionalProperties": false,
+      "properties": {
+        "node": {
+          "description": "Device-specific node that holds the value.",
+          "title": "Node",
+          "type": "string"
+        },
+        "scale": {
+          "default": 1.0,
+          "description": "sfnc_value = raw * scale + offset",
+          "title": "Scale",
+          "type": "number"
+        },
+        "offset": {
+          "default": 0.0,
+          "title": "Offset",
+          "type": "number"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Unit of the SFNC-side value (e.g. 'dB', 'us').",
+          "title": "Unit"
+        }
+      },
+      "required": [
+        "node"
+      ],
+      "title": "Conversion",
+      "type": "object"
+    },
+    "ProfileMatch": {
+      "additionalProperties": false,
+      "properties": {
+        "vendor": {
+          "default": "*",
+          "description": "fnmatch pattern on DeviceVendorName (case-insensitive).",
+          "title": "Vendor",
+          "type": "string"
+        },
+        "model": {
+          "default": "*",
+          "description": "fnmatch pattern on DeviceModelName (case-insensitive).",
+          "title": "Model",
+          "type": "string"
+        },
+        "device_version": {
+          "default": "*",
+          "description": "fnmatch pattern on DeviceVersion / firmware.",
+          "title": "Device Version",
+          "type": "string"
+        }
+      },
+      "title": "ProfileMatch",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "gcr_version": {
+      "default": "1.0",
+      "description": "Format version 'MAJOR.MINOR'.",
+      "title": "Gcr Version",
+      "type": "string"
+    },
+    "kind": {
+      "const": "profile",
+      "default": "profile",
+      "title": "Kind",
+      "type": "string"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "match": {
+      "$ref": "#/$defs/ProfileMatch"
+    },
+    "verified": {
+      "default": false,
+      "description": "True if checked against real hardware.",
+      "title": "Verified",
+      "type": "boolean"
+    },
+    "aliases": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "SFNC name -> device node name.",
+      "title": "Aliases",
+      "type": "object"
+    },
+    "conversions": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Conversion"
+      },
+      "description": "SFNC name -> device node with linear value conversion.",
+      "title": "Conversions",
+      "type": "object"
+    },
+    "quirks": {
+      "description": "Free-text notes for humans.",
+      "items": {
+        "type": "string"
+      },
+      "title": "Quirks",
+      "type": "array"
+    }
+  },
+  "required": [
+    "name",
+    "match"
+  ],
+  "title": "Profile",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/dotchang/genicam-format-prototype/spec/schema/profile.schema.json"
+}

@@ -1,0 +1,19 @@
+# Portable camera settings written with SFNC feature names.
+# Settings are applied top to bottom; each is read back and checked.
+gcr_version: "1.0"
+kind: config
+name: low-noise-mono
+description: Monochrome, >=12 bit, fixed 10 ms exposure, no gain, full sensor.
+target: { pixel_format_family: mono, min_bit_depth: 12 }
+settings:
+  - { node: PixelFormat, value: [Mono12, Mono12p, Mono16], level: required }  # first available wins
+  - { node: Width, value: "@max" }
+  - { node: Height, value: "@max" }
+  - { node: OffsetX, value: "@center", level: preferred }
+  - { node: OffsetY, value: "@center", level: preferred }
+  - { node: ExposureAuto, value: "Off" }
+  - { node: ExposureTime, value: 10, unit: ms, tolerance: 1% }
+  - { node: GainAuto, value: "Off", level: preferred }
+  - { node: Gain, selector: { GainSelector: All }, value: 0.0, unit: dB, level: preferred, tolerance: 0.1 }
+  - { node: BlackLevel, selector: { BlackLevelSelector: All }, value: 0, level: optional }
+  - { node: Gamma, value: 1.0, level: optional }

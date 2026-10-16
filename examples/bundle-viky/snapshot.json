@@ -1,0 +1,219 @@
+{
+  "gcr_version": "1.0",
+  "kind": "snapshot",
+  "taken_at": "2026-10-16T05:16:17+00:00",
+  "nodes": {
+    "TLParamsLocked": {
+      "value": 0,
+      "type": "int",
+      "access": "RW",
+      "min": -9223372036854775808,
+      "max": 9223372036854775807,
+      "inc": 1
+    },
+    "PayloadSize": {
+      "value": 10240080,
+      "type": "int",
+      "access": "RO",
+      "unit": "B",
+      "min": 0,
+      "max": 4294967295,
+      "inc": 1
+    },
+    "GenDCStreamingMode": {
+      "value": "Off",
+      "type": "enum",
+      "access": "RW",
+      "symbolics": [
+        "Off",
+        "On"
+      ]
+    },
+    "GenDCStreamingStatus": {
+      "value": "Off",
+      "type": "enum",
+      "access": "RO",
+      "symbolics": [
+        "Off",
+        "On"
+      ]
+    },
+    "Width": {
+      "value": 640,
+      "type": "int",
+      "access": "RW",
+      "min": 100,
+      "max": 800,
+      "inc": 1
+    },
+    "Height": {
+      "value": 480,
+      "type": "int",
+      "access": "RW",
+      "min": 100,
+      "max": 800,
+      "inc": 1
+    },
+    "AspectRatio": {
+      "value": 1.3333333730697632,
+      "type": "float",
+      "access": "RO",
+      "min": -3.4028234663852886e+38,
+      "max": 3.4028234663852886e+38
+    },
+    "ComponentSelector": {
+      "value": "Intensity",
+      "type": "enum",
+      "access": "RW",
+      "symbolics": [
+        "Intensity",
+        "Range"
+      ]
+    },
+    "ComponentEnable": {
+      "value": true,
+      "type": "bool",
+      "access": "RO"
+    },
+    "PixelFormat": {
+      "value": "Mono8",
+      "type": "enum",
+      "access": "RW",
+      "symbolics": [
+        "RGBa8",
+        "Mono8"
+      ]
+    },
+    "ComponentIDValue": {
+      "value": 1,
+      "type": "int",
+      "access": "RO",
+      "min": -9223372036854775808,
+      "max": 9223372036854775807,
+      "inc": 1
+    },
+    "AcquisitionMode": {
+      "value": "Continuous",
+      "type": "enum",
+      "access": "RO",
+      "symbolics": [
+        "Continuous"
+      ]
+    },
+    "AcquisitionFrameRate": {
+      "value": 50.0,
+      "type": "float",
+      "access": "RW",
+      "unit": "Hz",
+      "min": 1.0,
+      "max": 200.0,
+      "inc": 1.0
+    },
+    "ChunkModeActive": {
+      "value": true,
+      "type": "bool",
+      "access": "RW"
+    },
+    "ChunkSelector": {
+      "value": "NrBounces",
+      "type": "enum",
+      "access": "RW",
+      "symbolics": [
+        "NrBounces",
+        "Scan3dData"
+      ]
+    },
+    "ChunkEnable": {
+      "value": true,
+      "type": "bool",
+      "access": "RW"
+    },
+    "EventSelector": {
+      "value": "GameProgress",
+      "type": "enum",
+      "access": "RW",
+      "symbolics": [
+        "GameProgress"
+      ]
+    },
+    "EventNotification": {
+      "value": "On",
+      "type": "enum",
+      "access": "RO",
+      "symbolics": [
+        "Off",
+        "On"
+      ]
+    },
+    "BouncingBallSize": {
+      "value": 30,
+      "type": "int",
+      "access": "RW",
+      "min": 1,
+      "max": 40,
+      "inc": 1
+    },
+    "ComponentEnable[ComponentSelector=Intensity]": {
+      "value": true,
+      "type": "bool",
+      "access": "RO"
+    },
+    "PixelFormat[ComponentSelector=Intensity]": {
+      "value": "Mono8",
+      "type": "enum",
+      "access": "RW",
+      "symbolics": [
+        "RGBa8",
+        "Mono8"
+      ]
+    },
+    "ComponentIDValue[ComponentSelector=Intensity]": {
+      "value": 1,
+      "type": "int",
+      "access": "RO",
+      "min": -9223372036854775808,
+      "max": 9223372036854775807,
+      "inc": 1
+    },
+    "ComponentEnable[ComponentSelector=Range]": {
+      "value": false,
+      "type": "bool",
+      "access": "RW"
+    },
+    "PixelFormat[ComponentSelector=Range]": {
+      "value": "Coord3D_ABC32f_Planar",
+      "type": "enum",
+      "access": "RO",
+      "symbolics": [
+        "Coord3D_ABC32f_Planar"
+      ]
+    },
+    "ComponentIDValue[ComponentSelector=Range]": {
+      "value": 4,
+      "type": "int",
+      "access": "RO",
+      "min": -9223372036854775808,
+      "max": 9223372036854775807,
+      "inc": 1
+    },
+    "ChunkEnable[ChunkSelector=NrBounces]": {
+      "value": true,
+      "type": "bool",
+      "access": "RW"
+    },
+    "ChunkEnable[ChunkSelector=Scan3dData]": {
+      "value": true,
+      "type": "bool",
+      "access": "RW"
+    },
+    "EventNotification[EventSelector=GameProgress]": {
+      "value": "On",
+      "type": "enum",
+      "access": "RO",
+      "symbolics": [
+        "Off",
+        "On"
+      ]
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "gcr_version": "1.0",
+  "kind": "applied",
+  "profile": "viky-simulator",
+  "records": [
+    {
+      "key": "PixelFormat",
+      "node": "PixelFormat",
+      "level": "required",
+      "requested": [
+        "Mono12",
+        "Mono8"
+      ],
+      "applied": "Mono8",
+      "readback": "Mono8",
+      "status": "ok",
+      "message": "used candidate 'Mono8'"
+    },
+    {
+      "key": "Width",
+      "node": "Width",
+      "level": "required",
+      "requested": 640,
+      "applied": 640,
+      "readback": 640,
+      "status": "ok"
+    },
+    {
+      "key": "Height",
+      "node": "Height",
+      "level": "required",
+      "requested": 480,
+      "applied": 480,
+      "readback": 480,
+      "status": "ok"
+    },
+    {
+      "key": "ExposureAuto",
+      "node": "ExposureAuto",
+      "level": "optional",
+      "requested": "Off",
+      "status": "skipped",
+      "message": "node not found on device"
+    },
+    {
+      "key": "ExposureTime",
+      "node": "ExposureTime",
+      "level": "optional",
+      "requested": 5,
+      "unit": "ms",
+      "status": "skipped",
+      "message": "node not found on device"
+    },
+    {
+      "key": "BallSize",
+      "node": "BouncingBallSize",
+      "level": "preferred",
+      "requested": 30,
+      "applied": 30,
+      "readback": 30,
+      "status": "ok"
+    },
+    {
+      "key": "AcquisitionMode",
+      "node": "AcquisitionMode",
+      "level": "optional",
+      "requested": "Continuous",
+      "applied": "Continuous",
+      "readback": "Continuous",
+      "status": "ok"
+    },
+    {
+      "key": "TriggerMode[TriggerSelector=FrameStart]",
+      "node": "TriggerMode",
+      "level": "preferred",
+      "requested": "Off",
+      "status": "skipped",
+      "message": "selector TriggerSelector not found on device"
+    },
+    {
+      "key": "AcquisitionFrameRateEnable",
+      "node": "AcquisitionFrameRateEnable",
+      "level": "optional",
+      "requested": true,
+      "status": "skipped",
+      "message": "node not found on device"
+    },
+    {
+      "key": "AcquisitionFrameRate",
+      "node": "AcquisitionFrameRate",
+      "level": "preferred",
+      "requested": 50.0,
+      "applied": 50,
+      "readback": 50,
+      "unit": "Hz",
+      "status": "ok"
+    },
+    {
+      "key": "ChunkModeActive",
+      "node": "ChunkModeActive",
+      "level": "required",
+      "requested": true,
+      "applied": true,
+      "readback": true,
+      "status": "ok"
+    },
+    {
+      "key": "ChunkEnable[ChunkSelector=NrBounces]",
+      "node": "ChunkEnable",
+      "level": "preferred",
+      "requested": true,
+      "applied": true,
+      "readback": true,
+      "status": "ok"
+    }
+  ]
+}

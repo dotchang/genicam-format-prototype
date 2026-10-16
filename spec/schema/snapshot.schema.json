@@ -1,0 +1,100 @@
+{
+  "$defs": {
+    "SnapshotNode": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "default": null,
+          "title": "Value"
+        },
+        "type": {
+          "title": "Type",
+          "type": "string"
+        },
+        "access": {
+          "title": "Access",
+          "type": "string"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit"
+        },
+        "min": {
+          "default": null,
+          "title": "Min"
+        },
+        "max": {
+          "default": null,
+          "title": "Max"
+        },
+        "inc": {
+          "default": null,
+          "title": "Inc"
+        },
+        "symbolics": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Symbolics"
+        }
+      },
+      "required": [
+        "type",
+        "access"
+      ],
+      "title": "SnapshotNode",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "gcr_version": {
+      "default": "1.0",
+      "description": "Format version 'MAJOR.MINOR'.",
+      "title": "Gcr Version",
+      "type": "string"
+    },
+    "kind": {
+      "const": "snapshot",
+      "default": "snapshot",
+      "title": "Kind",
+      "type": "string"
+    },
+    "taken_at": {
+      "title": "Taken At",
+      "type": "string"
+    },
+    "nodes": {
+      "additionalProperties": {
+        "$ref": "#/$defs/SnapshotNode"
+      },
+      "description": "Key: node[selector=value].",
+      "title": "Nodes",
+      "type": "object"
+    }
+  },
+  "required": [
+    "taken_at"
+  ],
+  "title": "Snapshot",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/dotchang/genicam-format-prototype/spec/schema/snapshot.schema.json"
+}
