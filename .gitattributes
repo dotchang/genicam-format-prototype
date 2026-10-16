@@ -1,0 +1,4 @@
+* text=auto eol=lf
+# Capture bundles are hashed in manifest.json; store them byte-for-byte.
+examples/bundle-*/** -text
+*.tiff binary
